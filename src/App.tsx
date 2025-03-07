@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Routes, Route, Link } from "react-router";
 import { Products } from "./features/products/Products";
 import { CartLink } from "./features/cart/CartLink";
 import { Cart } from "./features/cart/Cart";
@@ -7,7 +7,7 @@ import styles from "./App.module.css";
 
 function App() {
   return (
-    <Router>
+    <div>
       <div className={styles.app}>
         <header className={styles.header}>
           <nav>
@@ -21,18 +21,12 @@ function App() {
           </nav>
         </header>
       </div>
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/products">
-          <Products />
-        </Route>
-        <Route path="/cart">
-          <Cart />
-        </Route>
-      </Switch>
-    </Router>
+      <Routes>
+        <Route path="/products" element={ <Products />} />
+        <Route path="/cart" element={ <Cart />} />
+        <Route path="/" element={<Home />} /> 
+      </Routes>
+    </div>
   );
 }
 
