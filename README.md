@@ -7,8 +7,8 @@ Example shopping cart application for learning redux and redux toolkit. Goes alo
 Checkout the code base and then type:
 
 ```
-npm install
-npm run dev
+yarn install
+yarn start
 ```
 
 ## Lessons
